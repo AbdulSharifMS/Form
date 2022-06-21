@@ -1,0 +1,27 @@
+<body>
+  {{> App}}
+</body>
+
+<template name="App">
+  <div>
+    <h1>My Profile</h1>
+    {{ > insertBookForm }}
+    <div class="profile-wrapper">
+    </div>
+  </div>
+</template>
+
+<template name="insertBookForm">
+  {{#autoForm id="insertBookForm" type="method" meteormethod="submitTasks" omitFields="createdAt" }}
+  <fieldset>
+    <legend><h4>Add Personal Information</h4></legend>
+    {{> afQuickField name='author' label="name" placeholder="name"}}
+    <br>
+    {{> afQuickField name='summary' label="author" rows=6}}
+    <br>
+    {{> afQuickField name='copies' label="email"}}
+  </fieldset>
+  {{/autoForm}}
+  <br>
+  <button>Insert</button>
+</template>
